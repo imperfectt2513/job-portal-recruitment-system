@@ -1,18 +1,59 @@
-# Salesforce DX Project: Next Steps
+# Job Portal Recruitment System - Salesforce
 
-Now that you’ve created a Salesforce DX project, what’s next? Here are some documentation resources to get you started.
+A complete Hiring Management System built on Salesforce Developer Edition.
 
-## How Do You Plan to Deploy Your Changes?
+## Project Overview
+This project automates the end-to-end recruitment process — from job posting to candidate selection — using Salesforce CRM, Apex, Flows, and Aura Components.
 
-Do you want to deploy a set of changes, or create a self-contained application? Choose a [development model](https://developer.salesforce.com/tools/vscode/en/user-guide/development-models).
+## Tech Stack
+- Salesforce CRM (Developer Edition)
+- Apex Triggers & Classes
+- Record-Triggered Flows
+- Aura Components
+- SOQL
+- Reports & Dashboards
 
-## Configure Your Salesforce DX Project
+## Features
 
-The `sfdx-project.json` file contains useful configuration information for your project. See [Salesforce DX Project Configuration](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_ws_config.htm) in the _Salesforce DX Developer Guide_ for details about this file.
+### Custom Objects
+- **Job_Posting__c** — Stores job openings with title, department, status, skills required
+- **Candidate__c** — Stores candidate details with status tracking
+- **Interview__c** — Tracks interview rounds, feedback, and scores
 
-## Read All About It
+### Automation (Flows)
+- Auto creates Onboarding Task when candidate is Selected
+- Sends email notification when candidate is Selected
+- Sends rejection email when candidate is Rejected
 
-- [Salesforce Extensions Documentation](https://developer.salesforce.com/tools/vscode/)
-- [Salesforce CLI Setup Guide](https://developer.salesforce.com/docs/atlas.en-us.sfdx_setup.meta/sfdx_setup/sfdx_setup_intro.htm)
-- [Salesforce DX Developer Guide](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_intro.htm)
-- [Salesforce CLI Command Reference](https://developer.salesforce.com/docs/atlas.en-us.sfdx_cli_reference.meta/sfdx_cli_reference/cli_reference.htm)
+### Apex
+- **CandidateStatusTrigger** — Auto fills Rejection Reason when status = Rejected
+- **CandidateHelper** — SOQL class to count candidates per job posting
+
+### Aura Component
+- **candidateStatusCard** — Displays candidate info on record page
+
+### Validation Rules
+- Email required when status is In Review
+- Skills required when applying
+
+### Reports & Dashboard
+- Candidate Status Report
+- Hiring Dashboard with Donut Chart showing pipeline
+
+## Objects Relationship
+Job Posting → Candidate (Lookup)
+Candidate → Interview (Lookup)
+
+## How to Run
+1. Login to Salesforce Developer Edition
+2. Navigate to Hiring Management System app
+3. Create Job Postings
+4. Add Candidates linked to Job Postings
+5. Schedule Interviews
+6. Update Candidate Status to trigger automations
+
+## Author
+Sakshi Madne
+Raj Surve
+Dnyaneshwar Tate
+BTech Computer Science | 2026
