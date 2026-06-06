@@ -1,7 +1,7 @@
 <aura:component implements="flexipage:availableForRecordHome,force:hasRecordId" access="global">
     <aura:attribute name="recordId" type="Id"/>
     <aura:attribute name="candidate" type="Object"/>
-    <force:recordData aura:id="recordLoader" recordId="{!v.recordId}" targetFields="{!v.candidate}" fields="Name,Status__c,Email__c,Skills__c"/>
+    <force:recordData aura:id="recordLoader" recordId="{!v.recordId}" targetFields="{!v.candidate}" fields="Name,Status__c,email__c,skills__c"/>
     <div class="slds-card">
         <div class="slds-card__header">
             <h2 class="slds-text-heading_medium">Candidate Status Card</h2>
@@ -9,8 +9,8 @@
         <div class="slds-card__body slds-card__body_inner">
             <p><b>Name:</b> {!v.candidate.Name}</p>
             <p><b>Status:</b> {!v.candidate.Status__c}</p>
-            <p><b>Email:</b> {!v.candidate.Email__c}</p>
-            <p><b>Skills:</b> {!v.candidate.Skills__c}</p>
+            <p><b>Email:</b> {!v.candidate.email__c}</p>
+            <p><b>Skills:</b> {!v.candidate.skills__c}</p>
         </div>
     </div>
 </aura:component>
